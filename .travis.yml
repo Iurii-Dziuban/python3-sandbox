@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.4"
+before_install:
+  - pip install pytest pytest-cov
+  - pip install coveralls
+install: pip install pybuilder
+script: pyb clean install_dependencies publish
+after_success:
+  - coveralls
